@@ -1,0 +1,8 @@
+<!-- verificar-festivo.component.html -->
+<div>
+    <mat-form-field>
+      <input matInput [(ngModel)]="fecha" placeholder="Ingrese una fecha (dd/MM/yyyy)">
+    </mat-form-field>
+    <button mat-raised-button (click)="verificarFestivo()">Verificar Festivo</button>
+    <p>{{ mensaje }}</p>
+  </div>
