@@ -1,7 +1,10 @@
-// listar-festivos.component.ts
 import { Component } from '@angular/core';
 import { FestivoService } from '../festivo.service';
-import { FestivoDTO } from '../models/festivo.dto';
+
+interface FestivoDTO {
+  nombre: string;
+  fecha: string;
+}
 
 @Component({
   selector: 'app-listar-festivos',
@@ -12,12 +15,11 @@ export class ListarFestivosComponent {
   year: number;
   festivos: FestivoDTO[];
 
-  constructor(private festivoService: FestivoService) {}
+  constructor(private festivoService: FestivoService) { }
 
   listarFestivos() {
     this.festivoService.listarFestivos(this.year).subscribe(
-      festivos => this.festivos = festivos,
-      error => this.festivos = []
+      response => this.festivos = response
     );
   }
 }

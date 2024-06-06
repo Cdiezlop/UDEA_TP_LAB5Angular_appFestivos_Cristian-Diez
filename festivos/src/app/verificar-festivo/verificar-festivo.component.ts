@@ -1,4 +1,3 @@
-// verificar-festivo.component.ts
 import { Component } from '@angular/core';
 import { FestivoService } from '../festivo.service';
 
@@ -9,14 +8,14 @@ import { FestivoService } from '../festivo.service';
 })
 export class VerificarFestivoComponent {
   fecha: string;
-  mensaje: string;
+  resultado: string;
 
-  constructor(private festivoService: FestivoService) {}
+  constructor(private festivoService: FestivoService) { }
 
   verificarFestivo() {
     this.festivoService.verificarFestivo(this.fecha).subscribe(
-      mensaje => this.mensaje = mensaje,
-      error => this.mensaje = 'Fecha inválida'
+      response => this.resultado = response,
+      error => this.resultado = 'Fecha inválida'
     );
   }
 }
