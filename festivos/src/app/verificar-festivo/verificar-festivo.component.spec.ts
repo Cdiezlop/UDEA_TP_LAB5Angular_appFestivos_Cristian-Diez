@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { VerificarFestivoComponent } from './verificar-festivo.component';
 
 describe('VerificarFestivoComponent', () => {
@@ -8,10 +7,12 @@ describe('VerificarFestivoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [VerificarFestivoComponent]
+      declarations: [ VerificarFestivoComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(VerificarFestivoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
